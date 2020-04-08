@@ -15,18 +15,20 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A)) {
 
-            rigidbody.velocity = new Vector2(-5, 0);
-
-        }else if (Input.GetKey(KeyCode.D))
+            rigidbody.velocity = new Vector2(-8, rigidbody.velocity.y);
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (Input.GetKey(KeyCode.D))
         {
 
-            rigidbody.velocity = new Vector2(5, 0);
+            rigidbody.velocity = new Vector2(8, rigidbody.velocity.y);
+            transform.localScale = new Vector3(1, 1, 1);
 
         }
-        else if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            rigidbody.velocity = new Vector2(0, 3);
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x, 23);
 
         }
 
