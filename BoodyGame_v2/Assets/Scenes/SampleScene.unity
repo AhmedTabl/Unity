@@ -22796,6 +22796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1681486730}
+  anime: {fileID: 1681486733}
 --- !u!61 &1681486732
 BoxCollider2D:
   m_ObjectHideFlags: 0
