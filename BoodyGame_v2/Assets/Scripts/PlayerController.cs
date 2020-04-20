@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Animator anime;
     private Collider2D collider;
+    [SerializeField]private Text CherryCounter;
 
     //Finite state machine
     private enum State { idle, running, jumping , falling};
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 20f;
     [SerializeField] private float jumpForce = 50f;
+    [SerializeField]private int cherries = 0;
 
     private void Start()
     {
@@ -33,6 +36,15 @@ public class PlayerController : MonoBehaviour
         anime.SetInteger("state", (int)state);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Collectable") {
+
+            Destroy(collision.gameObject);
+            cherries++;
+            CherryCounter.text = cherries.ToString();
+        }
+    }
     private void Movement()
     {
         float horizontal_dirction = Input.GetAxis("Horizontal");
