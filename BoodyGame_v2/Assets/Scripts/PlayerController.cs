@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //References
     private Rigidbody2D rigidbody;
     private Animator anime;
-    public Joystick joystick;
-    private enum State { idle, running, jumping , falling};
     private Collider2D collider;
-    [SerializeField]private LayerMask ground;
+
+    //Finite state machine
+    private enum State { idle, running, jumping , falling};
     private State state = State.idle;
 
-    public float speed = 20f;
-    public float jumpForce = 50f;
+    //Inspector variables
+    [SerializeField] private LayerMask ground;
+    [SerializeField] private float speed = 20f;
+    [SerializeField] private float jumpForce = 50f;
 
     private void Start()
     {
@@ -25,8 +28,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-       float  horizontal_dirction = Input.GetAxis("Horizontal");
-       
+        Movement();
+        Animation_State();
+        anime.SetInteger("state", (int)state);
+    }
+
+    private void Movement()
+    {
+        float horizontal_dirction = Input.GetAxis("Horizontal");
+
         if (horizontal_dirction < 0)
         {
 
@@ -34,14 +44,11 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-4, 4, 1);
 
         }
-        else if (horizontal_dirction >0)
+        else if (horizontal_dirction > 0)
         {
 
             rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
             transform.localScale = new Vector3(4, 4, 1);
-        }
-        else {
-
         }
 
         if ((Input.GetButtonDown("Jump")) && (collider.IsTouchingLayers(ground)))
@@ -51,12 +58,8 @@ public class PlayerController : MonoBehaviour
             state = State.jumping;
 
         }
-
-        velocity_state();
-        anime.SetInteger("state", (int)state);
-
     }
-    private void velocity_state() {
+    private void Animation_State() {
         if (state == State.jumping)
         {
 
@@ -74,13 +77,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (Mathf.Abs(rigidbody.velocity.x) > 2f)
         {
-            //Moving
-            state = State.running;
+            
+                state = State.running;
         }
         else {
 
             state = State.idle;
         }
-
     }
 }
