@@ -19,8 +19,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 20f;
     [SerializeField] private float jumpForce = 50f;
-    private int cherries = 0;
     [SerializeField] private float HitForce = 50f;
+    [SerializeField] private KeyCode MovementLeft;
+    [SerializeField] private KeyCode MovementRight;
+    [SerializeField] private KeyCode JumpButton;
+    private int cherries = 0;
 
 
     //Main Functions
@@ -42,7 +45,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    //Collision and Collectables functions
+    //Collectables function
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Collectable") {
@@ -53,60 +56,26 @@ public class PlayerController : MonoBehaviour
             CherryCounter.text = cherries.ToString();
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            if (state == State.falling) {
-                Destroy(collision.gameObject);
-                Jump();
-            }
-            else
-            {
-                state = State.hurt;
-                if (collision.transform.position.x > transform.position.x)
-                {
-                    //The enemy is to our right so we get bounced to the left
-                    rigidbody.velocity = new Vector2(-HitForce, rigidbody.velocity.y);
-
-                }
-                else
-                {
-                    //The enemy is to our left so we get boumced to the right
-                    rigidbody.velocity = new Vector2(HitForce, rigidbody.velocity.y);
-                }
-            }
-        }
-    }
 
     //Movement and State functions
     private void Movement()
     {
-        float horizontal_dirction = Input.GetAxis("Horizontal");
 
-        if (horizontal_dirction < 0f)
+        if (Input.GetKey(MovementLeft))
         {
 
             rigidbody.velocity = new Vector2(-speed, rigidbody.velocity.y);
             transform.localScale = new Vector3(-4, 4, 1);
-            if (horizontal_dirction > -0.25f)
-            {
-                rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
-            }
 
         }
-        else if (horizontal_dirction > 0f)
+        else if (Input.GetKey(MovementRight))
         {
 
             rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
             transform.localScale = new Vector3(4, 4, 1);
-            if (horizontal_dirction < 0.25f)
-            {
-                rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
-            }
         }
 
-        if ((Input.GetButtonDown("Jump")) && (collider.IsTouchingLayers(ground)))
+        if (Input.GetKeyDown(JumpButton) && collider.IsTouchingLayers(ground))
         {
 
             Jump();
