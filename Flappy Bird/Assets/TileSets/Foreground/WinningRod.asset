@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: tileset-sliced_86
+  m_Name: WinningRod
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300172, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
-  m_Color: {r: 0.1742847, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0b474f978fc54804ab36c6a663b5bbf9, type: 3}
+  m_Color: {r: 0.9811321, g: 0.7858149, b: 0, a: 1}
   m_Transform:
     e00: 1
     e01: 0
