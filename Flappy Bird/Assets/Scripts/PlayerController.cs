@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
+    //Inspector variables
     [SerializeField] private KeyCode jumpButton;
     [SerializeField] private string NextLevel;
     [SerializeField] private Rigidbody2D levelForeground;
     [SerializeField] private Rigidbody2D levelBackground;
     [SerializeField] private float levelSpeed;
     [SerializeField] private float jumpForce;
+
+    //Refrences
     private Rigidbody2D rigidbody;
+
+    //Other Variables
+
 
     void Start()
     {
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Win")
         {
             SceneManager.LoadScene(NextLevel);
+
         }
     }
 }

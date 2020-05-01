@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Obstacle
   - Win
+  - ScoreReciever
+  - player
+  - Add
   layers:
   - Default
   - TransparentFX
