@@ -784,7 +784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.378872, y: 0.47152066, z: -10}
+  m_LocalPosition: {x: 17.941874, y: 0.48228028, z: -10}
   m_LocalScale: {x: 2.7832823, y: 3.4054608, z: 1}
   m_Children: []
   m_Father: {fileID: 1856401828}
@@ -851,7 +851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572003610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.869879, y: 7.455378, z: -10}
+  m_LocalPosition: {x: -13.973143, y: 7.455378, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1670072732}
@@ -40556,7 +40556,7 @@ GameObject:
   - component: {fileID: 1856401826}
   - component: {fileID: 1856401825}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: IronMan
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40614,8 +40614,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014967169, y: -0.21981414}
-  m_Size: {x: 3.866158, y: 3.867907}
+  m_Offset: {x: 1.8520617, y: -0.021481376}
+  m_Size: {x: 8.063129, y: 5.146079}
   m_Direction: 1
 --- !u!212 &1856401826
 SpriteRenderer:
@@ -40656,7 +40656,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 906a84c480fe46546b8c1fe8a7940ba0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffce12a379b561844b3ad33b8f17e98d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
