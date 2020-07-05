@@ -9,32 +9,30 @@ public class PlayerController : MonoBehaviour
     //Inspector variables
     [SerializeField] private KeyCode jumpButton;
     [SerializeField] private string NextLevel;
-    [SerializeField] private Rigidbody2D levelForeground;
-    [SerializeField] private Rigidbody2D levelBackground;
-    [SerializeField] private float levelSpeed;
+    [SerializeField] private float Speed;
     [SerializeField] private float jumpForce;
 
     //Refrences
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rb;
 
     //Other Variables
 
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        levelForeground.velocity = new Vector2(-levelSpeed , 0);
-        levelBackground.velocity = new Vector2(-levelSpeed, 0);
-
+        
         PlayerMovement();
     }
 
     private void PlayerMovement()
     {
+        rb.velocity = new Vector2(Speed,rb.velocity.y);
+
         if (Input.GetKeyDown(jumpButton))
         {
             jump();
@@ -42,7 +40,7 @@ public class PlayerController : MonoBehaviour
     }
     private void jump()
     {
-        rigidbody.velocity = new Vector2(0, jumpForce);
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
