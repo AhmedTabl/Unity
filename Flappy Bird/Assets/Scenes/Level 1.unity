@@ -21416,7 +21416,7 @@ MonoBehaviour:
   responseDelay: 2.5
   rangeOfVision: 15
   player: {fileID: 1856401828}
-  speed: 9
+  speed: 6
 --- !u!50 &1284584050
 Rigidbody2D:
   serializedVersion: 4
@@ -21889,7 +21889,7 @@ MonoBehaviour:
   responseDelay: 2.5
   rangeOfVision: 15
   player: {fileID: 1856401828}
-  speed: 9
+  speed: 6
 --- !u!50 &1604971068
 Rigidbody2D:
   serializedVersion: 4
@@ -22008,7 +22008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpButton: 32
   NextLevel: Level 2
-  Speed: 10
+  Speed: 7.5
   jumpForce: 12.5
 --- !u!50 &1856401824
 Rigidbody2D:
@@ -44605,7 +44605,7 @@ MonoBehaviour:
   responseDelay: 2.5
   rangeOfVision: 15
   player: {fileID: 1856401828}
-  speed: 9
+  speed: 6
 --- !u!61 &2010225380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45029,7 +45029,7 @@ MonoBehaviour:
   responseDelay: 2.5
   rangeOfVision: 15
   player: {fileID: 1856401828}
-  speed: 9
+  speed: 6
 --- !u!50 &2039239894
 Rigidbody2D:
   serializedVersion: 4
