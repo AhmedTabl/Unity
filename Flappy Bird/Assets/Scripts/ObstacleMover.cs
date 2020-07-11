@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObstacleMover : MonoBehaviour
 {
+    [SerializeField] private bool upToDown;
+    [SerializeField] private bool downToUp;
     [SerializeField] private float speed = 0;
 
     private Rigidbody2D rb;
@@ -12,17 +14,28 @@ public class ObstacleMover : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(0, speed);
+
+        if (upToDown == true)
+        {
+            downToUp = false;
+            rb.velocity = new Vector2(0, -speed);
+        }
+        if (downToUp == true)
+        {
+            upToDown = false;
+            rb.velocity = new Vector2(0, speed);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y >= 35)
+        if(transform.position.y >= 39)
         {
             rb.velocity = new Vector2(0, -speed);
 
-        }else if (transform.position.y <= 2)
+        }
+        if (transform.position.y <= 3)
         {
             rb.velocity = new Vector2(0, speed);
         }
