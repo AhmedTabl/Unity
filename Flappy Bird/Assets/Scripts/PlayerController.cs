@@ -8,9 +8,10 @@ public class PlayerController : MonoBehaviour
 {
     //Inspector variables
     [SerializeField] private KeyCode jumpButton;
-    [SerializeField] private string NextLevel;
     [SerializeField] private float Speed;
+    [SerializeField] private string nextLevel;
     [SerializeField] private float jumpForce;
+    public GameObject victoryMenu;
 
     //Refrences
     private Rigidbody2D rb;
@@ -46,8 +47,21 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Win")
         {
-            SceneManager.LoadScene(NextLevel);
+            Time.timeScale = 0f;
+            victoryMenu.SetActive(true);
 
         }
+    }
+    public void nextLevelButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nextLevel);
+        victoryMenu.SetActive(false);
+    }
+    public void restartButton()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        victoryMenu.SetActive(false);
     }
 }
