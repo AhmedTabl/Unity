@@ -9,12 +9,11 @@ public class PlayerController : MonoBehaviour
     //Inspector variables
     [SerializeField] private KeyCode jumpButton;
     [SerializeField] private float Speed;
-    [SerializeField] private string nextLevel;
     [SerializeField] private float jumpForce;
-    public GameObject victoryMenu;
 
     //Refrences
     private Rigidbody2D rb;
+    private VictoryMenu vicMenu;
 
     //Other Variables
 
@@ -22,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        vicMenu = GetComponent<VictoryMenu>();
     }
 
     void Update()
@@ -47,21 +47,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Win")
         {
+
+            vicMenu.victoryMenu.SetActive(true);
             Time.timeScale = 0f;
-            victoryMenu.SetActive(true);
 
         }
     }
-    public void nextLevelButton()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(nextLevel);
-        victoryMenu.SetActive(false);
-    }
-    public void restartButton()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        victoryMenu.SetActive(false);
-    }
+    
 }
