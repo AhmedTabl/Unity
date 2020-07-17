@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     //Refrences
     private Rigidbody2D rb;
-    private VictoryMenu vicMenu;
+    private MenuButtons Menu;
 
     //Other Variables
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        vicMenu = GetComponent<VictoryMenu>();
+        Menu = GetComponent<MenuButtons>();
     }
 
     void Update()
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Win")
         {
 
-            vicMenu.victoryMenu.SetActive(true);
+            Menu.victoryMenu.SetActive(true);
             Time.timeScale = 0f;
 
         }

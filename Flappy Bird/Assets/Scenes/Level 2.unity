@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830307964}
+      - m_Target: {fileID: 830307963}
         m_MethodName: restartButton
         m_Mode: 1
         m_Arguments:
@@ -24834,7 +24834,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822674587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1420622, y: 16.819256, z: -10}
+  m_LocalPosition: {x: 7.700242, y: 16.819256, z: -10}
   m_LocalScale: {x: 0.359288, y: 0.293646, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -24857,7 +24857,6 @@ GameObject:
   - component: {fileID: 830307956}
   - component: {fileID: 830307955}
   - component: {fileID: 830307963}
-  - component: {fileID: 830307964}
   m_Layer: 0
   m_Name: IronMan
   m_TagString: player
@@ -25034,24 +25033,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 830307954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d3ae5205169cc48868cf696a47204f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 122872296}
---- !u!114 &830307964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830307954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92015a91afdf6f49b9805076ac9df7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 34a204c07d9a13d43a5e394b0a2686da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   victoryMenu: {fileID: 786243287}
   loseMenu: {fileID: 584670322}
+  pauseMenu: {fileID: 122872296}
   nextLevel: Level 3
 --- !u!1001 &912317353
 PrefabInstance:
@@ -26357,7 +26344,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830307964}
+      - m_Target: {fileID: 830307963}
         m_MethodName: restartButton
         m_Mode: 1
         m_Arguments:
@@ -35099,7 +35086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830307964}
+      - m_Target: {fileID: 830307963}
         m_MethodName: nextLevelButton
         m_Mode: 1
         m_Arguments:
@@ -36046,7 +36033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748944336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1420622, y: 16.819256, z: -10}
+  m_LocalPosition: {x: 7.700242, y: 16.819256, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 164572509}

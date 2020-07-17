@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class RestartOnCollision : MonoBehaviour
 {
-    private VictoryMenu vicMenu;
+    private MenuButtons MenuB;
 
     private void Start()
     {
-        vicMenu = GetComponent<VictoryMenu>();
+        MenuB = GetComponent<MenuButtons>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -17,7 +17,7 @@ public class RestartOnCollision : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
 
-            vicMenu.loseMenu.SetActive(true);
+            MenuB.loseMenu.SetActive(true);
             Time.timeScale = 0f;
 
         }
