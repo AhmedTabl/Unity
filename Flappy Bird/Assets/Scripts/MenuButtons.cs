@@ -8,9 +8,9 @@ public class MenuButtons : MonoBehaviour
     public GameObject victoryMenu;
     public GameObject loseMenu;
     public GameObject pauseMenu;
-
+    [SerializeField] private AudioSource buttonSound;
     [SerializeField] private string nextLevel;
-
+    
 
     //Pause Menu Buttnon Functions
     void Update()
@@ -29,12 +29,14 @@ public class MenuButtons : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        buttonSound.Play();
     }
     public void mainMenu()
     {
         pauseMenu.SetActive(false);
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        buttonSound.Play();
     }
 
 
@@ -44,18 +46,21 @@ public class MenuButtons : MonoBehaviour
     {
 
         SceneManager.LoadScene("Level 1");
+        buttonSound.Play();
 
     }
     public void quit()
     {
 
         Application.Quit();
+        buttonSound.Play();
 
     }
     public void HowToPlay()
     {
         
         SceneManager.LoadScene("HowToPlayMenu");
+        buttonSound.Play();
 
     }
 
@@ -64,7 +69,7 @@ public class MenuButtons : MonoBehaviour
     {
 
         SceneManager.LoadScene(0);
-
+        buttonSound.Play();
     }
 
 
@@ -74,11 +79,13 @@ public class MenuButtons : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(nextLevel);
         victoryMenu.SetActive(false);
+        buttonSound.Play();
     }
     public void restartButton()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         victoryMenu.SetActive(false);
+        buttonSound.Play();
     }
 }
