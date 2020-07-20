@@ -63,6 +63,14 @@ public class MenuButtons : MonoBehaviour
         buttonSound.Play();
 
     }
+    public void LevelsMenu()
+    {
+
+        SceneManager.LoadScene("LevelsMenu");
+        buttonSound.Play();
+
+    }
+
 
     //HowToPlay Menu Back Button
     public void Back()
@@ -86,6 +94,27 @@ public class MenuButtons : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         victoryMenu.SetActive(false);
+        buttonSound.Play();
+    }
+
+
+    //Levels Menu Button Functions
+    public void GoToLevel1()
+    {
+
+        SceneManager.LoadScene("Level 1");
+        buttonSound.Play();
+    }
+    public void GoToLevel2()
+    {
+
+        SceneManager.LoadScene("Level 2");
+        buttonSound.Play();
+    }
+    public void GoToLevel3()
+    {
+
+        SceneManager.LoadScene("Level 3");
         buttonSound.Play();
     }
 }
