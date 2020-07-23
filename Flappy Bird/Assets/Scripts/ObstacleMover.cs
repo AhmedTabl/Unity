@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ObstacleMover : MonoBehaviour
 {
-    [SerializeField] private bool upToDown;
-    [SerializeField] private bool downToUp;
+    [SerializeField] private bool Down;
+    [SerializeField] private bool Up;
+    [SerializeField] private bool left;
+    [SerializeField] private bool right;
     [SerializeField] private float speed = 0;
 
     private Rigidbody2D rb;
@@ -15,31 +17,54 @@ public class ObstacleMover : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        if (upToDown == true)
+        if (Down == true)
         {
-            downToUp = false;
+            Up = false;
             rb.velocity = new Vector2(0, -speed);
         }
-        if (downToUp == true)
+        else if (Up == true)
         {
-            upToDown = false;
+            Down = false;
             rb.velocity = new Vector2(0, speed);
+        }
+
+
+        if (left == true)
+        {
+            right = false;
+            rb.velocity = new Vector2(-speed, 0);
+        }
+        else if (right == true)
+        {
+            left = false;
+            rb.velocity = new Vector2(speed, 0);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y >= 39)
+
+        //Vertical Obstacles Movement
+        if((transform.position.y >= 42) && (Up == true || Down == true))
         {
             rb.velocity = new Vector2(0, -speed);
 
         }
-        if (transform.position.y <= 3)
+       else if ((transform.position.y <= 2) && (Up == true || Down == true))
         {
             rb.velocity = new Vector2(0, speed);
         }
 
+        //Horizontal Obstacles Movement
+        if ((transform.position.x >= 170) && (left == true || right == true))
+        {
+            rb.velocity = new Vector2(-speed, 0);
+        }
+        else if ((transform.position.x <= 120) && (left == true || right == true))
+        {
+            rb.velocity = new Vector2(speed, 0);
+        }
 
     }
 }
