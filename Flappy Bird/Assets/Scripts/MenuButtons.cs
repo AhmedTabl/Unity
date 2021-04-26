@@ -10,7 +10,7 @@ public class MenuButtons : MonoBehaviour
     public GameObject pauseMenu;
     [SerializeField] private AudioSource buttonSound;
     [SerializeField] private string nextLevel;
-    
+
 
     //Pause Menu Buttnon Functions
     void Update()
@@ -20,7 +20,6 @@ public class MenuButtons : MonoBehaviour
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
-
         }
 
     }
@@ -115,6 +114,13 @@ public class MenuButtons : MonoBehaviour
     {
 
         SceneManager.LoadScene("Level 3");
+        buttonSound.Play();
+    }
+
+    public void GoToLevel4()
+    {
+
+        SceneManager.LoadScene("Level 4");
         buttonSound.Play();
     }
 }

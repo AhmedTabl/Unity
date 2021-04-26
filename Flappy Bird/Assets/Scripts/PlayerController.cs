@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     //Refrences
     private Rigidbody2D rb;
     private MenuButtons Menu;
-    private AudioSource jumpSound;
+    public AudioSource jumpSound;
 
     //Other Variables
 
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
             Menu.victoryMenu.SetActive(true);
             Time.timeScale = 0f;
-
+            
         }
     }
     
