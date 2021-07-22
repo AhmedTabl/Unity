@@ -18,12 +18,12 @@ public class Spawner : MonoBehaviour
         {
           
             GameObject newbuilding = Instantiate(building);
-            newbuilding.transform.position = transform.position + new Vector3(100, Random.Range(-20, 7.5f), 0);
+            newbuilding.transform.position = transform.position + new Vector3(25f, Random.Range(-20, 7.5f), 0);
             Destroy(newbuilding, 40);
 
             GameObject newBird = Instantiate(bird);
             newBird.GetComponent<Rigidbody2D>().velocity = new Vector2(-10, newBird.GetComponent<Rigidbody2D>().velocity.y);
-            newBird.transform.position = new Vector2();
+            newBird.transform.position = transform.position + new Vector3(45f, Random.Range(25f, 44f), newBird.GetComponent<Transform>().position.z);
             Destroy(newBird, 40);
 
             timer = 0;
