@@ -9,6 +9,7 @@ TagManager:
   - ScoreReciever
   - player
   - Add
+  - coin
   layers:
   - Default
   - TransparentFX

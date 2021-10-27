@@ -24,6 +24,14 @@ public class MenuButtons : MonoBehaviour
 
     }
 
+    public void pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        buttonSound.Play();
+    }
+
+
     public void resume()
     {
         pauseMenu.SetActive(false);
@@ -66,6 +74,13 @@ public class MenuButtons : MonoBehaviour
     {
 
         SceneManager.LoadScene("LevelsMenu");
+        buttonSound.Play();
+
+    }
+    public void Endless()
+    {
+
+        SceneManager.LoadScene("Endless");
         buttonSound.Play();
 
     }
