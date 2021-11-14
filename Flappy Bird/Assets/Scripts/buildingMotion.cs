@@ -19,10 +19,11 @@ public class buildingMotion : MonoBehaviour
 
 
 
-          rb.velocity = new Vector2(-10, rb.velocity.y);
+          rb.velocity = new Vector2(sc.speed, rb.velocity.y);
 
 
-    }
+
+        }
 
 
     }

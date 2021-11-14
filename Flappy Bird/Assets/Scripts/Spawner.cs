@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
 
     private float timer3 = 0f;
     private float b = 0f;
-    private float a = 0f;
+    private float a = 2f;
 
     public GameObject building;
     public GameObject bird;
@@ -55,18 +55,14 @@ public class Spawner : MonoBehaviour
 
         if (timer > maxTime)
         {
-
-            float buildVel = -10f;
+          
             GameObject newbuilding = Instantiate(building);
             newbuilding.transform.position = transform.position + new Vector3(25f, Random.Range(-20, 7.5f), 0);
             Destroy(newbuilding, 40);
 
             timer = b;
-            a++;
-            if (a == 5) {
-
-                buildVel -= 20;
-                //newbuilding.GetComponent<Rigidbody2D>().velocity = new Vector2(buildVel, newbuilding.GetComponent<Rigidbody2D>().velocity.y);
+            if (timer >= (a/2)) {
+                maxTime += 0.02f;
             }
         }
 

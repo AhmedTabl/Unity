@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public Text score;
+    [SerializeField] private Text score;
     public int scoreCounter = 0;
     public int speed = -10;
 
@@ -18,11 +18,9 @@ public class ScoreCounter : MonoBehaviour
             scoreCounter += 1;
 
             speed -= 1;
-            //building.velocity = new Vector2(speed, building.velocity.y);
+            building.velocity = new Vector2(speed, building.velocity.y);
 
             score.text = scoreCounter.ToString();
         }
     }
-
-
 }
