@@ -22465,10 +22465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9272470784f3239479992e76234d3b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefabs:
-  - {fileID: 4620678656419063270, guid: 45dc7278393c1b044a8b549a8e27840a, type: 3}
-  - {fileID: 7982665261043699266, guid: 2b85a1ba1f760674285e1a4e496195aa, type: 3}
-  - {fileID: 8565910459460239685, guid: 27bc823f9fff6364483c537d27f03916, type: 3}
+  anim: {fileID: 1254844573}
   spawnPoint: {fileID: 1254844569}
 --- !u!4 &282043547
 Transform:

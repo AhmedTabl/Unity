@@ -5,28 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class characterSelection : MonoBehaviour
 {
-    public GameObject[] characters;
+    public Animator anim;
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] sprites;
     public int selectedCharacter = 0;
 
     public void nextCharacter() {
 
-        characters[selectedCharacter].SetActive(false);
-        selectedCharacter = (selectedCharacter + 1) % characters.Length;
-        characters[selectedCharacter].SetActive(true);
+        selectedCharacter = (selectedCharacter + 1) % sprites.Length;
+        anim.SetInteger("characterAnim", selectedCharacter);
     
     }
 
     public void previousCharacter()
     {
 
-        characters[selectedCharacter].SetActive(false);
         selectedCharacter--;
         if (selectedCharacter < 0)
         {
-            selectedCharacter += characters.Length;
+            selectedCharacter += sprites.Length;
 
         }
-        characters[selectedCharacter].SetActive(true);
+        anim.SetInteger("characterAnim", selectedCharacter);
 
     }
 
