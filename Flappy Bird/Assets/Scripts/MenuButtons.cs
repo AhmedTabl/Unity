@@ -85,6 +85,14 @@ public class MenuButtons : MonoBehaviour
 
     }
 
+    public void Characters()
+    {
+
+        SceneManager.LoadScene("CharacterSelect");
+        buttonSound.Play();
+
+    }
+
 
     //HowToPlay Menu Back Button
     public void Back()

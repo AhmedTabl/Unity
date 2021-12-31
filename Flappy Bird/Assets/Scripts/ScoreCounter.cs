@@ -17,9 +17,10 @@ public class ScoreCounter : MonoBehaviour
         {
             scoreCounter += 1;
 
-            speed -= 1;
-            building.velocity = new Vector2(speed, building.velocity.y);
-
+            if (speed > -400) {
+                speed -= 1;
+                building.velocity = new Vector2(speed, building.velocity.y);
+            }
             score.text = scoreCounter.ToString();
         }
     }

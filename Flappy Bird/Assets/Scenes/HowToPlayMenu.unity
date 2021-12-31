@@ -2503,9 +2503,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\nObjective :  avoid crashing into the buildings or the enemies and
-    return safely to the avengers tower.\n\nControls:  -Use \"esc\" or \"p\" to pause
-    the game.\n               - Use \"Space\" to jump.\n\n\nHave Fun!!"
+  m_text: '
+
+
+    Objective :  avoid crashing into the buildings or the enemies and
+    collect gems.
+
+
+
+    Choose your favourite meme character.
+
+
+
+    Have Fun!!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
