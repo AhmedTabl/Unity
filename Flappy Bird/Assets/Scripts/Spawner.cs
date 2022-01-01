@@ -45,7 +45,7 @@ public class Spawner : MonoBehaviour
         {
             GameObject newBird = Instantiate(bird);
             newBird.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, newBird.GetComponent<Rigidbody2D>().velocity.y);
-            newBird.transform.position = transform.position + new Vector3(45f, Random.Range(28f, 44f), newBird.GetComponent<Transform>().position.z);
+            newBird.transform.position = transform.position + new Vector3(45f, Random.Range(40f, 50f), newBird.GetComponent<Transform>().position.z);
             Destroy(newBird, 40);
 
             timer2 = 0;
