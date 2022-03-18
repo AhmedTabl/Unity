@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-
+    private CardSelection cs;
     [SerializeField] private Camera cam;
-    [SerializeField] GameObject prefab;
+    [SerializeField] GameObject[] prefab;
+
+    private void Start()
+    {
+        cs = GetComponent<CardSelection>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,7 +24,8 @@ public class Spawn : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit)) {
 
-                GameObject g = Instantiate(prefab);
+                int sc = cs.selectedCard;
+                GameObject g = Instantiate(prefab[sc]);
                 g.transform.position = hit.point;
             
             }
